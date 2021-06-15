@@ -1,37 +1,16 @@
-## Welcome to GitHub Pages
+## java基础
 
-You can use the [editor on GitHub](https://github.com/ZhengxinLi/note/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+[面试题](https://blog.csdn.net/u012456528/article/details/79759487)
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+### 构造器调用顺序
 
-### Markdown
+子类构造器调用super方法一定只能在第一句，因为子类初始化，先调用父类构造器，在调用子类构造器。
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+子类如何调用父类的方法呢：子类里面存在一个super对象，指向父对象。
 
-```markdown
-Syntax highlighted code block
+### static的使用场景：
 
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/ZhengxinLi/note/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+1. 修饰成员变量，成员方法。只有在调用这个类的方法或属性的时候，才会触发静态代码块。
+2. 静态代码块：静态代码块定义在类中方法外2.静态代码块的格式是 static { 语句体; }3.它优先于主方法执行、优先于构造代码块执行，当以任意形式第一次使用到该类时执行4.该类不管创建多少对象，静态代码块只执行一次
+3. 静态内部类：普通类是不允许声明为静态的，只有内部类才可以被static修饰的内部类可以直接作为一个普通类来使用，而不需实例一个外部类
+4. 静态倒入包，import static java.lang.Math.*;可直接使用Math下的所有静态资源（包括方法，属性），不需要通过类来使用，直接max(2, 3)。
