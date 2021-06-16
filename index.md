@@ -2,8 +2,7 @@
 
 #                                                    面经
 
-![image-20210515131405861](/Users/lizhengxin/Library/Application Support/typora-user-images/image-20210515131405861.png)
-
+![](images/key.png)
 ## java基础
 
 [面试题](https://blog.csdn.net/u012456528/article/details/79759487)
@@ -1412,14 +1411,11 @@ full GC触发的stw更长。
 
 ### 垃圾回收器
 
-<img src="/Users/lizhengxin/Library/Application Support/typora-user-images/截屏2021-04-06 下午7.21.29.png" alt="截屏2021-04-06 下午7.21.29" style="zoom:50%;" />
-
-<img src="/Users/lizhengxin/Desktop/截屏2021-04-06 下午7.29.47.png" alt="截屏2021-04-06 下午7.29.47" style="zoom:50%;" />
-
+![](images/GC.png)
+![](images/GC_heap.png)
 CMS（并发标记清理）：老年代垃圾回收器，主要解决stw时间过长的问题。
 
-![截屏2021-04-06 下午8.05.32](/Users/lizhengxin/Library/Application Support/typora-user-images/截屏2021-04-06 下午8.05.32.png)
-
+![](images/CMS.png)
 可能产生浮动垃圾，因为收垃圾的同时，用户可能产生垃圾，因为没有挂起用户线程。
 
 [CMS和G1](https://www.jianshu.com/p/ab54489f5d71)
@@ -2146,17 +2142,11 @@ zset当元素个数查过一定阈值或者字符串长度超过一定阈值时�
 
 #### **如果更新**db**成功但是更新缓存失败引发数据不一致，怎么解决？**
 
-![image-20210321220159928](/Users/lizhengxin/Library/Application Support/typora-user-images/image-20210321220159928.png)
-
-![image-20210321220214721](/Users/lizhengxin/Library/Application Support/typora-user-images/image-20210321220214721.png)
-
-![image-20210321220220513](/Users/lizhengxin/Library/Application Support/typora-user-images/image-20210321220220513.png)
-
+![](images/redis1.png)
+![](images/redis2.png)
 外加串型化
 
 #### 缓存穿透
-
-![image-20210321220317481](/Users/lizhengxin/Library/Application Support/typora-user-images/image-20210321220317481.png)
 
 布隆过滤器需要维护，比如数据库中新加一个数据，删除多个数据需要重新计算，否则误判过多。
 
@@ -2187,8 +2177,7 @@ Redis，单线程，基于内存运行，断电之后丢失数据，但是redis�
 
 1. RDB（默认）直接基于内存数据生成持久化（快照）
 
-![image-20210321220633876](/Users/lizhengxin/Library/Application Support/typora-user-images/image-20210321220633876.png)
-
+![](images/RDB1.png)
 因为是单线程（5.0之前，6.0之后改为多线程，开发中），所以要新建一个一样的子进程，否则再处理持久化的时刻，无法接受客户端的命令。
 
 持久化文件在哪里？
@@ -2199,8 +2188,7 @@ Redis开机读取持久化文件，在哪里启动，在哪里寻找持久化文
 
 1. 定时查询
 
-![image-20210321220653444](/Users/lizhengxin/Library/Application Support/typora-user-images/image-20210321220653444.png)
-
+![](images/RDB2.png)
 2. shutdown关闭时
 
 3. bgsave，save都会出发持久化，只是前者异步，后者用主进程持久化，所以不用后者
@@ -2221,8 +2209,7 @@ Redis开机读取持久化文件，在哪里启动，在哪里寻找持久化文
 
    如何触发？
 
-   ![image-20210321220844009](/Users/lizhengxin/Library/Application Support/typora-user-images/image-20210321220844009.png)
-
+![](images/AOF1.png)
    一般选择第三种
 
    重写机制（给aof文件瘦身）fork子进程，子进程操作，直接从redis内存写，替换之前的aof文件）
@@ -2255,14 +2242,11 @@ Spring是一个轻量级的控制反转（IOC）和面向切面编程（AOP）�
 
 七大模块组成
 
-![image-20210321221018503](/Users/lizhengxin/Library/Application Support/typora-user-images/image-20210321221018503.png)
-
+![](images/Spring1.png)
 ####  IOC控制反转：
 
-<img src="/Users/lizhengxin/Library/Application Support/typora-user-images/image-20210321221024966.png" alt="image-20210321221024966" style="zoom:50%;" />
-
-<img src="/Users/lizhengxin/Library/Application Support/typora-user-images/image-20210321221034262.png" alt="image-20210321221034262" style="zoom:50%;" />
-
+![](images/IOC.png)
+![](images/IOC2.png)
 #### 循环注入
 
 Spring在实例化一个bean的时候，是首先递归的实例化其所依赖的所有bean，直到某个bean没有依赖其他bean，此时就会将该实例返回，然后反递归的将获取到的bean设置为各个上层bean的属性的。
