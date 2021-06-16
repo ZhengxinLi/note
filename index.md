@@ -46,17 +46,11 @@ Java实现多态有 3 个必要条件：**继承、重写和向上转型**。只
 **原理**：在编译后的字节码文件中，就已经替换为原来的原生类型（RawType，也称为裸类型）了，并且在相应的地方插入了强制转型代码，因此，对于运行期的 Java 语言来说，ArrayList＜Integer＞与 ArrayList＜String＞就是同一 个类，所以泛型技术实际上是 Java 语言的一颗语法糖，Java 语言中的泛型实现方法称为类型擦除，基于这种方法实现的泛型称为伪泛型。
 
 ### String常用方法
-
-![截屏2021-03-27 下午7.23.24](/Users/lizhengxin/Library/Application Support/typora-user-images/截屏2021-03-27 下午7.23.24.png)
-
-## ![截屏2021-03-27 下午7.23.41](/Users/lizhengxin/Library/Application Support/typora-user-images/截屏2021-03-27 下午7.23.41.png)
-
-![截屏2021-03-27 下午7.24.29](/Users/lizhengxin/Library/Application Support/typora-user-images/截屏2021-03-27 下午7.24.29.png)
-
-![截屏2021-03-27 下午7.25.33](/Users/lizhengxin/Library/Application Support/typora-user-images/截屏2021-03-27 下午7.25.33.png)
-
-![截屏2021-03-27 下午7.26.43](/Users/lizhengxin/Library/Application Support/typora-user-images/截屏2021-03-27 下午7.26.43.png)
-
+![](images/string1.png)
+![](images/string2.png)
+![](images/string3.png)
+![](images/string4.png)
+![](images/string5.png)
 ### floor，ceil，around
 
 floor函数是向下取整函数，用来得到不大于一个数的最大整数；
@@ -942,8 +936,7 @@ public static void main(String[] args) throws ExecutionException, InterruptedExc
 2. 内核线程KLT。
 
 JavaJVM里面使用的线程模型为KLT。
-
-<img src="/Users/lizhengxin/Library/Application Support/typora-user-images/image-20210515120853595.png" alt="image-20210515120853595" style="zoom:50%;" />
+![](images/KLT.png)
 
 ### 线程同步
 
@@ -1231,12 +1224,10 @@ Java虚拟机是一个可以执行Java字节码的虚拟机进程，Java源文�
 
 Java是不同平台编译相同，不同时JRE。
 
-<img src="/Users/lizhengxin/Library/Application Support/typora-user-images/截屏2021-03-26 下午3.40.40.png" alt="截屏2021-03-26 下午3.40.40" style="zoom:50%;" />
-
+![](images/JVM.png)
 c，c++，不同平台编译成不同的字节码，因此不是跨平台。
 
-<img src="/Users/lizhengxin/Library/Application Support/typora-user-images/截屏2021-03-26 下午3.43.12.png" alt="截屏2021-03-26 下午3.43.12" style="zoom:50%;" />
-
+![](images/JVM2.png)
 主线程执行代码
 
 栈：存放方法，包含局部变量、操作数栈、方法出口、动态链接等等
