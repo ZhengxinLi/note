@@ -25,9 +25,9 @@ class mod {
         return sb.reverse().toString();
     }
 
-    public static void main(String[] args) {
-        int col = 26;
-        System.out.println(new mod().convertToTitle(col));
-    }
+//    public static void main(String[] args) {
+//        int col = 26;
+//        System.out.println(new mod().convertToTitle(col));
+//    }
 
 }
