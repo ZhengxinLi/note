@@ -17,7 +17,7 @@ import java.util.Set;
  * Proprietary and Confidential.
  * ****************************************************
  **/
-class Solution {
+class ugly {
     public int getKthMagicNumber(int k) {
         Queue<Long> que = new PriorityQueue<>();
         Set<Long> seen = new HashSet<>();
